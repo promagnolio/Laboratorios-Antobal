@@ -1,0 +1,204 @@
+E<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Laboratorio ANTOBAL | Puerto Quijarro</title>
+<style>
+:root{--teal:#087f8c;--dark:#07545e;--pale:#eaf7f7;--bg:#f4f8fa;--ink:#18343b;--muted:#64777d;--line:#d9e5e8;--white:#fff;--red:#b83232;--green:#18794e}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px Arial,Helvetica,sans-serif;line-height:1.5}button,input,select,textarea{font:inherit}button{cursor:pointer}.header{background:white;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}.nav{max-width:1150px;margin:auto;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}.brand{display:flex;align-items:center;gap:10px;font-weight:bold;font-size:20px;color:var(--dark)}.brand-icon{background:var(--teal);color:white;border-radius:12px;width:42px;height:42px;display:grid;place-items:center;font-size:25px}.brand small{display:block;font-size:10px;letter-spacing:1px;color:var(--muted)}.links{display:flex;gap:5px;flex-wrap:wrap}.links button{border:0;background:transparent;padding:9px 11px;border-radius:8px;color:var(--ink);font-weight:bold}.links button.active,.links button:hover{background:var(--pale);color:var(--dark)}main{max-width:1150px;margin:auto;padding:24px 18px 55px}.page{display:none}.page.active{display:block}.hero{background:linear-gradient(120deg,#07545e,#0a9298);color:white;border-radius:20px;padding:38px;display:flex;align-items:center;justify-content:space-between;gap:20px}.hero h1{font-size:clamp(30px,4vw,46px);line-height:1.1;margin:8px 0}.hero p{max-width:650px;color:#e3f5f5}.hero-symbol{font-size:90px}.btn{border:0;border-radius:9px;padding:11px 16px;font-weight:bold;display:inline-block;text-decoration:none}.primary{background:var(--teal);color:white}.primary:hover{background:var(--dark)}.light{background:white;color:var(--dark)}.soft{background:var(--pale);color:var(--dark)}.outline{background:white;border:1px solid var(--teal);color:var(--teal)}.danger{background:#fff0f0;color:var(--red)}.section{margin-top:30px}.section-title{margin-bottom:14px}.section-title h2{margin:0;font-size:25px}.muted{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.card,.form-card{background:white;border:1px solid var(--line);border-radius:15px;padding:19px;box-shadow:0 8px 24px #173b480b}.card h3{margin:0 0 8px}.icon{font-size:26px;background:var(--pale);width:48px;height:48px;display:grid;place-items:center;border-radius:12px;margin-bottom:12px}.price{font-size:23px;font-weight:bold;color:var(--dark);margin:10px 0}.tag{display:inline-block;background:#fff4df;color:#795019;border-radius:20px;padding:4px 9px;font-size:12px;font-weight:bold}.notice{padding:13px 15px;background:#edf6fa;border-left:4px solid #4a9cb3;border-radius:8px;margin:15px 0}.success{background:#eaf7ee;border-color:var(--green)}.error{background:#fff0f0;border-color:var(--red)}.form-card{max-width:850px;margin:0 auto;padding:25px}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}label{font-size:13px;font-weight:bold}input,select,textarea{width:100%;padding:11px;border:1px solid #cbd9dd;border-radius:8px;background:white;color:var(--ink)}input:focus,select:focus,textarea:focus{outline:2px solid #087f8c33;border-color:var(--teal)}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.table-wrap{overflow:auto;background:white;border:1px solid var(--line);border-radius:12px;margin-top:12px}table{width:100%;border-collapse:collapse;min-width:620px}th,td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--line);font-size:13px}th{background:var(--pale)}tr:last-child td{border-bottom:0}.admin-layout{display:grid;grid-template-columns:205px minmax(0,1fr);gap:16px}.admin-menu,.admin-main{background:white;border:1px solid var(--line);border-radius:13px;padding:13px}.admin-menu button{width:100%;text-align:left;margin:3px 0}.admin-tab{display:none}.admin-tab.active{display:block}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:15px}.stat strong{display:block;font-size:27px;color:var(--dark)}.empty{text-align:center;padding:22px;color:var(--muted)}footer{text-align:center;background:#123e46;color:#dcebec;padding:23px}footer p{margin:4px}.hidden{display:none!important}
+@media(max-width:760px){.hero{padding:26px}.hero-symbol{display:none}.grid{grid-template-columns:repeat(2,1fr)}.admin-layout{grid-template-columns:1fr}.admin-menu{display:flex;overflow:auto;gap:5px}.admin-menu button{width:auto;white-space:nowrap}.stats{grid-template-columns:1fr 1fr}}
+@media(max-width:540px){.nav{align-items:flex-start}.links{flex-wrap:nowrap;overflow-x:auto;width:100%}.links button{white-space:nowrap}.grid,.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.form-card{padding:17px}.hero{padding:23px}.stats{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="header"><nav class="nav">
+ <div class="brand"><div class="brand-icon">✚</div><div>ANTOBAL<small>LABORATORIO CLÍNICO · PUERTO QUIJARRO</small></div></div>
+ <div class="links" id="navigation">
+  <button class="active" data-page="home">Inicio</button><button data-page="catalog">Análisis clínicos</button><button data-page="register">Registro</button><button data-page="appointment">Reservar cita</button><button data-page="results">Resultados</button><button data-page="admin">Administrador</button>
+ </div>
+</nav></header>
+<main>
+<section class="page active" id="home">
+ <div class="hero"><div><span>ATENCIÓN Y CONFIANZA</span><h1>Tu salud es nuestra prioridad.</h1><p>Bienvenido al sistema web del Laboratorio ANTOBAL de Puerto Quijarro. Consulta análisis clínicos, solicita citas y accede a tus informes.</p><div class="actions"><button class="btn light" data-go="appointment">Reservar una cita</button><button class="btn outline" data-go="catalog">Consultar análisis</button></div></div><div class="hero-symbol">🧪</div></div>
+ <div class="section"><div class="section-title"><h2>Nuestros servicios</h2><p class="muted">Accede fácilmente desde tu celular o computadora.</p></div><div class="grid">
+  <div class="card"><div class="icon">🔬</div><h3>Catálogo de análisis</h3><p class="muted">Consulta exámenes, precios e instrucciones de preparación.</p><button class="btn soft" data-go="catalog">Ver catálogo</button></div>
+  <div class="card"><div class="icon">📅</div><h3>Reserva de citas</h3><p class="muted">Solicita atención en laboratorio o a domicilio.</p><button class="btn soft" data-go="appointment">Solicitar cita</button></div>
+  <div class="card"><div class="icon">📄</div><h3>Resultados digitales</h3><p class="muted">Consulta tu informe usando el código individual.</p><button class="btn soft" data-go="results">Consultar resultado</button></div>
+ </div></div>
+ <div class="notice"><b>Nota:</b> Los precios y preparaciones son ejemplos para demostración. Confirma los datos con el laboratorio antes de realizarte un análisis.</div>
+</section>
+
+<section class="page" id="catalog">
+ <div class="section-title"><h2>Catálogo de análisis clínicos</h2><p class="muted">Consulta los análisis disponibles y sus indicaciones.</p></div>
+ <div class="grid" id="publicCatalog"></div>
+ <div class="notice">Las indicaciones pueden variar según el análisis y la situación de cada paciente. Sigue las instrucciones del personal de salud.</div>
+</section>
+
+<section class="page" id="register">
+ <div class="form-card"><h2>Registro de paciente</h2><p class="muted">Completa tus datos personales.</p>
+ <form id="registerForm"><div class="form-grid">
+  <div class="field"><label for="regName">Nombre completo *</label><input id="regName" required></div>
+  <div class="field"><label for="regCI">Carnet de identidad *</label><input id="regCI" required></div>
+  <div class="field"><label for="regAge">Edad *</label><input id="regAge" type="number" min="1" max="120" required></div>
+  <div class="field"><label for="regPhone">Celular *</label><input id="regPhone" type="tel" required></div>
+  <div class="field"><label for="regEmail">Correo electrónico</label><input id="regEmail" type="email"></div>
+  <div class="field"><label for="regSex">Sexo (opcional)</label><select id="regSex"><option value="">No especificar</option><option>Femenino</option><option>Masculino</option><option>Otro</option></select></div>
+  <div class="field full"><label><input id="regConsent" type="checkbox" required style="width:auto"> Acepto el uso de mis datos para esta demostración. *</label></div>
+ </div><div class="actions"><button class="btn primary">Registrar paciente</button></div></form><div id="registerMessage"></div>
+ </div>
+</section>
+
+<section class="page" id="appointment">
+ <div class="form-card"><h2>Reserva de cita</h2><p class="muted">Completa la solicitud. El laboratorio deberá confirmar el turno.</p>
+ <form id="appointmentForm"><div class="form-grid">
+  <div class="field"><label for="aptName">Nombre del paciente *</label><input id="aptName" required></div>
+  <div class="field"><label for="aptPhone">Celular *</label><input id="aptPhone" type="tel" required></div>
+  <div class="field"><label for="aptTest">Análisis clínico *</label><select id="aptTest" required></select></div>
+  <div class="field"><label for="aptType">Tipo de atención *</label><select id="aptType"><option>En laboratorio</option><option>A domicilio</option></select></div>
+  <div class="field"><label for="aptDate">Fecha *</label><input id="aptDate" type="date" required></div>
+  <div class="field"><label for="aptTime">Turno *</label><select id="aptTime" required></select></div>
+  <div class="field full"><label for="aptAddress">Dirección para atención a domicilio</label><input id="aptAddress" placeholder="Barrio, calle y referencia"></div>
+  <div class="field full"><label for="aptNotes">Observaciones</label><textarea id="aptNotes" rows="3"></textarea></div>
+ </div><div class="notice">Al enviar, se guardará una solicitud en este navegador y se abrirá WhatsApp para contactar al laboratorio.</div><button class="btn primary">Enviar solicitud por WhatsApp</button></form><div id="appointmentMessage"></div>
+ </div>
+</section>
+
+<section class="page" id="results">
+ <div class="form-card"><h2>Consulta de resultados</h2><p class="muted">Introduce el código de acceso entregado por el laboratorio.</p>
+ <form id="resultForm"><div class="field"><label for="resultCode">Código único *</label><input id="resultCode" required placeholder="Ej. ANTO-2026-001"></div><div class="actions"><button class="btn primary">Consultar informe</button></div></form><div id="resultMessage"></div>
+ <div class="notice">Los resultados reales deben almacenarse en un servidor seguro. Este prototipo guarda los archivos en el navegador utilizado.</div>
+ </div>
+</section>
+
+<section class="page" id="admin">
+ <div id="loginPanel" class="form-card" style="max-width:480px"><h2>Acceso administrativo</h2><p class="muted">Ingresa tus credenciales.</p><form id="loginForm"><div class="field"><label for="loginUser">Usuario</label><input id="loginUser" required></div><div class="field" style="margin-top:12px"><label for="loginPass">Contraseña</label><input id="loginPass" type="password" required></div><div class="actions"><button class="btn primary">Ingresar</button></div></form><div id="loginMessage"></div><div class="notice">Credenciales de prueba: usuario <b>admin</b>, contraseña <b>antobal123</b>. No utilizar estas credenciales en un sistema real.</div></div>
+ <div id="adminPanel" class="hidden">
+  <div class="section-title" style="display:flex;justify-content:space-between;align-items:center;gap:10px"><div><h2>Panel administrativo</h2><p class="muted">Gestión del laboratorio ANTOBAL.</p></div><button class="btn danger" id="logoutBtn">Cerrar sesión</button></div>
+  <div class="stats"><div class="card stat">Pacientes<strong id="countPatients">0</strong></div><div class="card stat">Citas<strong id="countAppointments">0</strong></div><div class="card stat">Informes PDF<strong id="countReports">0</strong></div></div>
+  <div class="admin-layout">
+   <aside class="admin-menu"><button class="btn soft" data-tab="patients">Pacientes</button><button class="btn soft" data-tab="manageCatalog">Catálogo de análisis</button><button class="btn soft" data-tab="appointments">Citas y turnos</button><button class="btn soft" data-tab="upload">Subir resultados PDF</button><button class="btn soft" data-tab="settings">WhatsApp</button></aside>
+   <div class="admin-main">
+    <div class="admin-tab active" id="tab-patients"><h3>Pacientes registrados</h3><div id="patientsTable"></div></div>
+    <div class="admin-tab" id="tab-manageCatalog">
+     <h3>Gestionar catálogo de análisis clínicos</h3><p class="muted">Añade, edita o elimina análisis y sus precios e indicaciones.</p>
+     <form id="catalogForm" class="card"><input id="editTestId" type="hidden"><div class="form-grid">
+      <div class="field"><label for="testName">Nombre del análisis *</label><input id="testName" required></div>
+      <div class="field"><label for="testPrice">Precio (Bs) *</label><input id="testPrice" type="number" min="0" step="0.5" required></div>
+      <div class="field full"><label for="testDescription">Descripción *</label><textarea id="testDescription" rows="2" required></textarea></div>
+      <div class="field full"><label for="testPreparation">Preparación e instrucciones *</label><textarea id="testPreparation" rows="2" required></textarea></div>
+     </div><div class="actions"><button class="btn primary" id="saveTestBtn">Agregar análisis</button><button type="button" class="btn outline" id="clearTestBtn">Limpiar</button></div></form>
+     <div id="manageCatalogTable"></div>
+    </div>
+    <div class="admin-tab" id="tab-appointments"><h3>Solicitudes de citas</h3><div id="appointmentsTable"></div><div class="card" style="margin-top:14px"><h3>Administrar turnos disponibles</h3><label for="turnsInput">Horarios separados por coma</label><input id="turnsInput" placeholder="08:00, 09:00, 10:00, 14:00"><button class="btn primary" id="saveTurnsBtn" style="margin-top:10px">Guardar horarios</button></div></div>
+    <div class="admin-tab" id="tab-upload"><h3>Subir informe de laboratorio</h3><form id="pdfForm" class="card"><div class="field"><label for="pdfPatient">Nombre del paciente *</label><input id="pdfPatient" required></div><div class="field" style="margin-top:10px"><label for="pdfAccessCode">Código único *</label><input id="pdfAccessCode" required placeholder="ANTO-2026-001"></div><div class="field" style="margin-top:10px"><label for="pdfFile">Archivo PDF (máximo 2 MB) *</label><input id="pdfFile" type="file" accept="application/pdf" required></div><button class="btn primary" style="margin-top:12px">Guardar PDF</button></form><div id="pdfMessage"></div><div id="reportsTable"></div></div>
+    <div class="admin-tab" id="tab-settings"><h3>Número de WhatsApp de atención</h3><div class="card"><div class="field"><label for="whatsappNumber">Número con código de país, sin + ni espacios</label><input id="whatsappNumber" placeholder="591XXXXXXXXX"></div><button class="btn primary" id="saveWhatsappBtn" style="margin-top:10px">Guardar número</button><div id="settingsMessage"></div></div></div>
+   </div>
+  </div>
+ </div>
+</section>
+</main>
+<footer><p><b>LABORATORIO ANTOBAL</b> · Puerto Quijarro, Santa Cruz, Bolivia</p><p>Prototipo académico adaptable a celulares, tabletas y computadoras.</p></footer>
+
+<script>
+"use strict";
+const $ = id => document.getElementById(id);
+const STORAGE = {patients:"antobal_v2_patients", appointments:"antobal_v2_appointments", catalog:"antobal_v2_catalog", reports:"antobal_v2_reports", settings:"antobal_v2_settings", turns:"antobal_v2_turns"};
+const defaultCatalog = [
+ {id:"t1",name:"Hemograma completo",price:70,description:"Evalúa los componentes celulares de la sangre.",preparation:"Generalmente no requiere ayuno. Confirmar con el laboratorio."},
+ {id:"t2",name:"Glucosa en sangre",price:35,description:"Mide el nivel de glucosa en la sangre.",preparation:"Puede requerir ayuno de 8 horas, según indicación profesional."},
+ {id:"t3",name:"Examen general de orina",price:30,description:"Analiza características físicas y químicas de la orina.",preparation:"Recolectar la muestra siguiendo las indicaciones del laboratorio."},
+ {id:"t4",name:"Perfil lipídico",price:120,description:"Mide colesterol y triglicéridos.",preparation:"Puede requerir ayuno de 9 a 12 horas, según indicación del laboratorio."},
+ {id:"t5",name:"Grupo sanguíneo y factor RH",price:45,description:"Identifica el grupo sanguíneo y el factor Rh.",preparation:"Generalmente no requiere ayuno."},
+ {id:"t6",name:"Prueba de embarazo",price:50,description:"Detecta la hormona relacionada con el embarazo.",preparation:"La preparación depende del tipo de muestra. Consultar al laboratorio."}
+];
+function load(key,fallback=[]){try{const v=localStorage.getItem(key);return v===null?fallback:JSON.parse(v)}catch(e){return fallback}}
+function save(key,value){localStorage.setItem(key,JSON.stringify(value))}
+function esc(value){return String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function catalog(){return load(STORAGE.catalog,defaultCatalog)}
+function settings(){return load(STORAGE.settings,{whatsapp:"59170000000"})}
+function turns(){return load(STORAGE.turns,["08:00","09:00","10:00","11:00","14:00","15:00"])}
+function showPage(id){document.querySelectorAll(".page").forEach(p=>p.classList.toggle("active",p.id===id));document.querySelectorAll("[data-page]").forEach(b=>b.classList.toggle("active",b.dataset.page===id));window.scrollTo({top:0,behavior:"smooth"});if(id==="admin")refreshAdmin()}
+document.querySelectorAll("[data-page]").forEach(b=>b.addEventListener("click",()=>showPage(b.dataset.page)));
+document.querySelectorAll("[data-go]").forEach(b=>b.addEventListener("click",()=>showPage(b.dataset.go)));
+function renderCatalog(){
+ const items=catalog();
+ $("publicCatalog").innerHTML=items.length?items.map(t=>`<article class="card"><div class="icon">🧬</div><h3>${esc(t.name)}</h3><p class="muted">${esc(t.description)}</p><div class="price">Bs ${Number(t.price).toFixed(2)}</div><span class="tag">Preparación</span><p>${esc(t.preparation)}</p><button class="btn soft choose-test" data-id="${esc(t.id)}">Solicitar este análisis</button></article>`).join(""):'<div class="empty">No hay análisis publicados.</div>';
+ $("aptTest").innerHTML=items.map(t=>`<option value="${esc(t.name)}">${esc(t.name)}</option>`).join("");
+ document.querySelectorAll(".choose-test").forEach(b=>b.addEventListener("click",()=>{const t=catalog().find(x=>x.id===b.dataset.id);if(t)$("aptTest").value=t.name;showPage("appointment")}));
+}
+function renderTurns(){$("aptTime").innerHTML=turns().map(t=>`<option value="${esc(t)}">${esc(t)}</option>`).join("")}
+function showMessage(id,text,type="success"){$(id).innerHTML=`<div class="notice ${type}">${text}</div>`}
+$("registerForm").addEventListener("submit",e=>{
+ e.preventDefault();
+ const p={id:Date.now().toString(),name:$("regName").value.trim(),ci:$("regCI").value.trim(),age:$("regAge").value,phone:$("regPhone").value.trim(),email:$("regEmail").value.trim(),sex:$("regSex").value,date:new Date().toLocaleDateString("es-BO")};
+ const list=load(STORAGE.patients);
+ if(list.some(x=>x.ci.toLowerCase()===p.ci.toLowerCase())){showMessage("registerMessage","Ya existe un paciente registrado con ese carnet.","error");return}
+ list.push(p);save(STORAGE.patients,list);e.target.reset();showMessage("registerMessage","Paciente registrado correctamente en este navegador.");
+});
+$("appointmentForm").addEventListener("submit",e=>{
+ e.preventDefault();
+ const a={id:Date.now().toString(),name:$("aptName").value.trim(),phone:$("aptPhone").value.trim(),test:$("aptTest").value,type:$("aptType").value,date:$("aptDate").value,time:$("aptTime").value,address:$("aptAddress").value.trim(),notes:$("aptNotes").value.trim(),status:"Pendiente"};
+ if(a.date<new Date().toLocaleDateString("en-CA")){showMessage("appointmentMessage","Selecciona una fecha válida.","error");return}
+ if(a.type==="A domicilio"&&!a.address){showMessage("appointmentMessage","Escribe la dirección para la atención a domicilio.","error");return}
+ const list=load(STORAGE.appointments);list.push(a);save(STORAGE.appointments,list);
+ const text=`Hola, deseo solicitar una cita en Laboratorio ANTOBAL.\nPaciente: ${a.name}\nCelular: ${a.phone}\nAnálisis: ${a.test}\nAtención: ${a.type}\nFecha: ${a.date}\nTurno: ${a.time}\nDirección: ${a.address||"No corresponde"}\nObservaciones: ${a.notes||"Ninguna"}\nPor favor, confirmar disponibilidad.`;
+ const number=(settings().whatsapp||"").replace(/\D/g,"");
+ showMessage("appointmentMessage","Solicitud guardada. Se abrirá WhatsApp para enviar el mensaje. La cita requiere confirmación del laboratorio.");
+ window.open("https://wa.me/"+number+"?text="+encodeURIComponent(text),"_blank");
+ e.target.reset();
+});
+$("aptDate").min=new Date().toLocaleDateString("en-CA");
+$("resultForm").addEventListener("submit",e=>{
+ e.preventDefault();const code=$("resultCode").value.trim().toUpperCase();const r=load(STORAGE.reports).find(x=>x.code.toUpperCase()===code);
+ if(!r){showMessage("resultMessage","No se encontró un informe con ese código. Verifica el código entregado por el laboratorio.","error");return}
+ $("resultMessage").innerHTML=`<div class="notice success"><b>Informe disponible</b><br>Paciente: ${esc(r.patient)}<br>Código: ${esc(r.code)}<br><button class="btn primary" id="downloadFound" style="margin-top:10px">Descargar informe PDF</button></div>`;
+ $("downloadFound").addEventListener("click",()=>downloadPdf(r.code));
+});
+function downloadPdf(code){const r=load(STORAGE.reports).find(x=>x.code===code);if(!r)return;const a=document.createElement("a");a.href=r.data;a.download="Resultado-"+code+".pdf";document.body.appendChild(a);a.click();a.remove()}
+$("loginForm").addEventListener("submit",e=>{e.preventDefault();if($("loginUser").value==="admin"&&$("loginPass").value==="antobal123"){sessionStorage.setItem("antobal_v2_admin","yes");$("loginMessage").innerHTML="";refreshAdmin()}else showMessage("loginMessage","Usuario o contraseña incorrectos.","error")});
+$("logoutBtn").addEventListener("click",()=>{sessionStorage.removeItem("antobal_v2_admin");$("adminPanel").classList.add("hidden");$("loginPanel").classList.remove("hidden");$("loginForm").reset()});
+document.querySelectorAll("[data-tab]").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll(".admin-tab").forEach(t=>t.classList.remove("active"));$("tab-"+b.dataset.tab).classList.add("active")}));
+function table(headers,rows){if(!rows.length)return '<div class="empty">No hay registros disponibles.</div>';return `<div class="table-wrap"><table><thead><tr>${headers.map(h=>`<th>${h}</th>`).join("")}</tr></thead><tbody>${rows.join("")}</tbody></table></div>`}
+function refreshAdmin(){
+ if(sessionStorage.getItem("antobal_v2_admin")!=="yes")return;
+ $("loginPanel").classList.add("hidden");$("adminPanel").classList.remove("hidden");
+ const patients=load(STORAGE.patients),appointments=load(STORAGE.appointments),reports=load(STORAGE.reports);
+ $("countPatients").textContent=patients.length;$("countAppointments").textContent=appointments.length;$("countReports").textContent=reports.length;
+ $("patientsTable").innerHTML=table(["Paciente","Carnet","Edad","Celular"],patients.map(p=>`<tr><td>${esc(p.name)}</td><td>${esc(p.ci)}</td><td>${esc(p.age)}</td><td>${esc(p.phone)}</td></tr>`));
+ $("appointmentsTable").innerHTML=table(["Paciente","Análisis","Fecha","Turno","Tipo","Estado"],appointments.map(a=>`<tr><td>${esc(a.name)}</td><td>${esc(a.test)}</td><td>${esc(a.date)}</td><td>${esc(a.time)}</td><td>${esc(a.type)}</td><td><select class="status-select" data-id="${esc(a.id)}"><option ${a.status==="Pendiente"?"selected":""}>Pendiente</option><option ${a.status==="Confirmada"?"selected":""}>Confirmada</option><option ${a.status==="Atendida"?"selected":""}>Atendida</option><option ${a.status==="Cancelada"?"selected":""}>Cancelada</option></select></td></tr>`));
+ document.querySelectorAll(".status-select").forEach(s=>s.addEventListener("change",()=>{const arr=load(STORAGE.appointments);const item=arr.find(x=>x.id===s.dataset.id);if(item){item.status=s.value;save(STORAGE.appointments,arr)}}));
+ $("reportsTable").innerHTML=table(["Paciente","Código","Acción"],reports.map(r=>`<tr><td>${esc(r.patient)}</td><td>${esc(r.code)}</td><td><button class="btn soft report-download" data-code="${esc(r.code)}">Descargar</button></td></tr>`));
+ document.querySelectorAll(".report-download").forEach(b=>b.addEventListener("click",()=>downloadPdf(b.dataset.code)));
+ renderManagedCatalog();$("turnsInput").value=turns().join(", ");$("whatsappNumber").value=settings().whatsapp||"";
+}
+function renderManagedCatalog(){
+ const items=catalog();
+ $("manageCatalogTable").innerHTML=table(["Análisis","Precio","Instrucciones","Acciones"],items.map(t=>`<tr><td><b>${esc(t.name)}</b><br>${esc(t.description)}</td><td>Bs ${Number(t.price).toFixed(2)}</td><td>${esc(t.preparation)}</td><td><button class="btn soft edit-test" data-id="${esc(t.id)}">Editar</button> <button class="btn danger delete-test" data-id="${esc(t.id)}">Eliminar</button></td></tr>`));
+ document.querySelectorAll(".edit-test").forEach(b=>b.addEventListener("click",()=>editTest(b.dataset.id)));
+ document.querySelectorAll(".delete-test").forEach(b=>b.addEventListener("click",()=>deleteTest(b.dataset.id)));
+}
+function clearTestForm(){$("catalogForm").reset();$("editTestId").value="";$("saveTestBtn").textContent="Agregar análisis"}
+function editTest(id){const t=catalog().find(x=>x.id===id);if(!t)return;$("editTestId").value=t.id;$("testName").value=t.name;$("testPrice").value=t.price;$("testDescription").value=t.description;$("testPreparation").value=t.preparation;$("saveTestBtn").textContent="Guardar cambios";$("catalogForm").scrollIntoView({behavior:"smooth",block:"start"})}
+function deleteTest(id){if(!confirm("¿Deseas eliminar este análisis del catálogo?"))return;save(STORAGE.catalog,catalog().filter(t=>t.id!==id));renderCatalog();renderManagedCatalog()}
+$("catalogForm").addEventListener("submit",e=>{
+ e.preventDefault();const id=$("editTestId").value||("t"+Date.now());
+ const item={id,name:$("testName").value.trim(),price:Number($("testPrice").value),description:$("testDescription").value.trim(),preparation:$("testPreparation").value.trim()};
+ if(!item.name||!item.description||!item.preparation||!Number.isFinite(item.price)||item.price<0)return;
+ const list=catalog(),index=list.findIndex(t=>t.id===id);if(index>=0)list[index]=item;else list.push(item);
+ save(STORAGE.catalog,list);renderCatalog();renderManagedCatalog();clearTestForm();alert("Catálogo actualizado correctamente.");
+});
+$("clearTestBtn").addEventListener("click",clearTestForm);
+$("saveTurnsBtn").addEventListener("click",()=>{const values=$("turnsInput").value.split(",").map(x=>x.trim()).filter(Boolean);if(!values.length){alert("Ingresa al menos un horario.");return}save(STORAGE.turns,values);renderTurns();alert("Horarios actualizados.")});
+$("saveWhatsappBtn").addEventListener("click",()=>{const n=$("whatsappNumber").value.replace(/\D/g,"");if(n.length<8){showMessage("settingsMessage","Ingresa un número válido con código de país.","error");return}save(STORAGE.settings,{whatsapp:n});showMessage("settingsMessage","Número de WhatsApp guardado correctamente.")});
+$("pdfForm").addEventListener("submit",e=>{
+ e.preventDefault();const file=$("pdfFile").files[0],code=$("pdfAccessCode").value.trim().toUpperCase(),patient=$("pdfPatient").value.trim();
+ if(!file||file.type!=="application/pdf"){showMessage("pdfMessage","Selecciona un archivo PDF válido.","error");return}
+ if(file.size>2*1024*1024){showMessage("pdfMessage","El archivo supera el límite de 2 MB.","error");return}
+ const list=load(STORAGE.reports);if(list.some(r=>r.code===code)){showMessage("pdfMessage","Ese código ya está registrado. Utiliza otro código.","error");return}
+ const reader=new FileReader();reader.onload=()=>{try{list.push({patient,code,data:reader.result});save(STORAGE.reports,list);$("pdfForm").reset();showMessage("pdfMessage","Informe guardado. Entrega el código único al paciente.");refreshAdmin()}catch(err){showMessage("pdfMessage","No hay espacio suficiente en el navegador. Para uso real se necesita almacenamiento en servidor.","error")}};reader.onerror=()=>showMessage("pdfMessage","No se pudo leer el archivo.","error");reader.readAsDataURL(file);
+});
+renderCatalog();renderTurns();
+</script>
+</body>
+</html>
