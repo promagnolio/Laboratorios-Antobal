@@ -116,7 +116,7 @@ function load(key,fallback=[]){try{const v=localStorage.getItem(key);return v===
 function save(key,value){localStorage.setItem(key,JSON.stringify(value))}
 function esc(value){return String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
 function catalog(){return load(STORAGE.catalog,defaultCatalog)}
-function settings(){return load(STORAGE.settings,{whatsapp:"59170000000"})}
+function settings(){return load(STORAGE.settings,{whatsapp:"59163020536"})}
 function turns(){return load(STORAGE.turns,["08:00","09:00","10:00","11:00","14:00","15:00"])}
 function showPage(id){document.querySelectorAll(".page").forEach(p=>p.classList.toggle("active",p.id===id));document.querySelectorAll("[data-page]").forEach(b=>b.classList.toggle("active",b.dataset.page===id));window.scrollTo({top:0,behavior:"smooth"});if(id==="admin")refreshAdmin()}
 document.querySelectorAll("[data-page]").forEach(b=>b.addEventListener("click",()=>showPage(b.dataset.page)));
